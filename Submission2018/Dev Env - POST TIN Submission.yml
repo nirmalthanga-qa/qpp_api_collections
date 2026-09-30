@@ -1,0 +1,75 @@
+info:
+  name: Dev Env - POST TIN Submission
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://dev.qpp.cms.gov/api/submissions/measurement-sets/
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{json_web_token}}
+  body:
+    type: json
+    data: "{\"submission\":{\r
+
+      \  \"programName\": \"mips\",\r
+
+      \  \"entityType\": \"group\",\r
+
+      \  \"taxpayerIdentificationNumber\": \"000153214\",\r
+
+      \            \r
+
+      \r
+
+      \  \"performanceYear\": 2018,\r
+
+      \      \"category\": \"ia\",\r
+
+      \      \"submissionMethod\": \"electronicHealthRecord\",\r
+
+      \      \"performanceStart\": \"2018-01-01\",\r
+
+      \      \"performanceEnd\": \"2018-05-01\",\r
+
+      \      \"measurements\": [\r
+
+      \        {\r
+
+      \          \"measureId\": \"IA_PCMH\",\r
+
+      \          \"value\": true\r
+
+      \        },\r
+
+      \        {\r
+
+      \          \"measureId\": \"IA_AHE_4\",\r
+
+      \          \"value\": true\r
+
+      \        }\r
+
+      \      ]\r
+
+      \    }\r
+
+      \      \r
+
+      \  \r
+
+      \r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "132fdf9c-4172-477a-872e-65c87bd46d1f",
+    "name": "Physician Compare-Local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-132fdf9c-4172-477a-872e-65c87bd46d1f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST-Boley Clinic",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"taxpayerIdentificationNumber\": \"000101010\",\n  \"performanceYear\": 2017,\n  \"entityType\": \"group\",\n  \"displayName\": \"Carmel Hospital\",\n  \"details\": {\n    \"quality\": {\n      \"activities\": [\n        {\n          \"activityId\": \"MIPS_EC_Attest3\",\n          \"status\": \"Y\",\n          \"name\": \"Title for MIPS Attestation 3\",\n          \"description\": \"Measure Description for MIPS Attestation Three: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\"\n        },\n        {\n          \"activityId\": \"MIPS_EC_Attest5\",\n          \"status\": \"Y\",\n          \"name\": \"Title for MIPS Attestation 5\",\n          \"description\": \"Measure Description for MIPS Attestation Five: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\"\n        }\n      ],\n      \"downloadable\": {\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ],\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"name\": \"MIPS Cardiovascular Measures\",\n          \"description\": \"Measure Description for MIPS Cardiovascular Measures: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"categoryType\": \"MIPS\",\n          \"measures\": [\n            {\n              \"name\": \"Measure Title for MIPS 001\",\n              \"description\": \"Measure Description for MIPS Measure One: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n              \"footnoteId\": \"1\",\n              \"footnote\": \"Data are suppressed due to insufficient sample size.\",\n              \"measureId\": \"MIPS_EC_001_overall\"\n            },\n            {\n              \"name\": \"Measure Title for MIPS 002\",\n              \"description\": \"Measure Description for MIPS Measure Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 0,\n              \"scoreType\": \"STAR\",\n              \"measureId\": \"MIPS_EC_002_overall\"\n            }\n          ],\n          \"categoryId\": \"MIPS_CARDIO\"\n        },\n        {\n          \"name\": \"Qualified Clinical Data Registry Measure\",\n          \"description\": \"Measure Description for MIPS Cardiovascular Measures: <p>Paragraph One.</p><p>Paragraph Two.</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></p>\",\n          \"categoryType\": \"QCDR\",\n          \"measures\": [\n            {\n              \"name\": \"Measure Title for QCDR ACRad14\",\n              \"description\": \"Measure Description for QCDR ACRad14: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 34,\n              \"scoreType\": \"PERCENTAGE\",\n              \"measureId\": \"QCDR_EC_ACRad14_overall\"\n            }\n          ],\n          \"categoryId\": \"QCDR\"\n        }\n      ]\n    },\n    \"aci\": {\n      \"activities\": [\n        {\n          \"activityId\": \"ACI_EC_attest1\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest1 (ACI)\",\n          \"description\": \"Measure Description for ACI Attestation One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        },\n        {\n          \"activityId\": \"ACI_EC_attest2\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest2 (ACI)\",\n          \"description\": \"Measure Description for ACI Attestation Two: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\"\n        }\n      ],\n      \"downloadable\": {\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ],\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"categoryId\": \"ACI_CAT1\",\n          \"categoryType\": \"ACI\",\n          \"name\": \"ACI Category One Title\",\n          \"description\": \"Full Description for ACI Category One: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"measures\": [\n            {\n              \"measureId\": \"ACI_EC_001_overall\",\n              \"name\": \"Measure Title for ACI 001\",\n              \"description\": \"Measure Description for ACI One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 56,\n              \"scoreType\": \"PERCENTAGE\"\n            },\n            {\n              \"measureId\": \"ACI_EP_234\",\n              \"name\": \"Measure Title for ACI 002\",\n              \"description\": \"Measure Description for ACI Measure Two: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n              \"score\": 83,\n              \"scoreType\": \"PERCENTAGE\"\n            }\n          ]\n        }\n      ]\n    },\n    \"ia\": {\n      \"activities\": [\n        {\n          \"activityId\": \"IA_EC_attest1\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest1\",\n          \"description\": \"Measure Description for IA Attestation One: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        },\n        {\n          \"activityId\": \"IA_EC_attest2\",\n          \"status\": \"N\",\n          \"name\": \"Attestation title for attest2\",\n          \"description\": \"Measure Description for IA Attestation Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        }\n      ],\n      \"downloadable\": {\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ],\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"categoryId\": \"IA_Category1\",\n          \"categoryType\": \"IA_Measures\",\n          \"name\": \"IA Measure Category One\",\n          \"description\": \"IA Measure Category One: description one\",\n          \"measures\": [\n            {\n              \"measureId\": \"IA_EC_001\",\n              \"name\": \"IA 001 Measure Title\",\n              \"description\": \"Measure Description for IA One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 4,\n              \"scoreType\": \"STAR\"\n            }\n          ]\n        },\n        {\n          \"categoryId\": \"IA_Category2\",\n          \"categoryType\": \"IA_Measures\",\n          \"name\": \"IA Measure Category Two (title two)\",\n          \"description\": \"IA Measure Category Two: description two\",\n          \"measures\": [\n            {\n              \"measureId\": \"IA_EC_002\",\n              \"name\": \"IA 002 Measure Title\",\n              \"description\": \"Measure Description for IA Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 78,\n              \"scoreType\": \"PERCENTAGE\"\n            }\n          ]\n        }\n      ]\n    },\n    \"finalScore\": {\n    \t\"downloadable\": {\n        \t\"rows\": [\n\t          {\n\t            \"frst_nm\": \"Bridget\",\n\t            \"lst_nm\": \"Wenlock\",\n\t            \"ind_pac_ind\": \"0012345678\",\n\t            \"npi\": \"1234567890\"\n\t          },\n\t          {\n\t            \"frst_nm\": \"Bridget\",\n\t            \"lst_nm\": \"Wenlock\",\n\t            \"ind_pac_ind\": \"0012345678\",\n\t            \"npi\": \"1234567890\"\n\t          }\n\t        ],\n\t        \"columns\": [\n\t          {\n\t            \"varname\": \"npi\",\n\t            \"label\": \"NPI\",\n\t            \"description\": \"\",\n\t            \"suppressed\": false\n\t          },\n\t          {\n\t            \"varname\": \"ind_pac_ind\",\n\t            \"label\": \"PAC ID\",\n\t            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n\t            \"suppressed\": true\n\t          },\n\t          {\n\t            \"varname\": \"lst_nm\",\n\t            \"label\": \"Last Name\",\n\t            \"description\": \"Individual clinician last name\",\n\t            \"suppressed\": false\n\t          },\n\t          {\n\t            \"varname\": \"frst_nm\",\n\t            \"label\": \"First Name\",\n\t            \"description\": \"Individual clinician first name\",\n\t            \"suppressed\": false\n\t          }\n\t        ]\n      }\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic No Quality",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \n   \"details\":{  \n      \"finalScore\":{  \n         \"downloadable\":{  \n            \"columns\":[  \n               {  \n                  \"varname\":\"NPI\",\n                  \"label\":\"NPI\",\n                  \"description\":\"NPI\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"Ind_PAC_ID\",\n                  \"label\":\"PAC ID\",\n                  \"description\":\"Unique individual clinician ID assigned by PECOS\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"lst_nm\",\n                  \"label\":\"Last Name\",\n                  \"description\":\"Individual clinician last name\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"frst_nm\",\n                  \"label\":\"First Name\",\n                  \"description\":\"Individual clinician first name\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"source\",\n                  \"label\":\"Source of scores\",\n                  \"description\":\"Method by which clinician achieved scores (APM, individual, no data, or neutral adjustment)\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"quality_category_score\",\n                  \"label\":\"Quality Category Score\",\n                  \"description\":\"Quality category score\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"ACI_category_score\",\n                  \"label\":\"ACI Category Score\",\n                  \"description\":\"ACI category score\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"IA_category_score\",\n                  \"label\":\"IA Category Score\",\n                  \"description\":\"IA category score\",\n                  \"suppressed\":false\n               },\n               {  \n                  \"varname\":\"final_MIPS_score\",\n                  \"label\":\"Final MIPS Score\",\n                  \"description\":\"Final MIPS score\",\n                  \"suppressed\":false\n               }\n            ],\n            \"rows\":[  \n               {  \n                  \"NPI\":\"0002357941\",\n                  \"Ind_PAC_ID\":\"1153415187\",\n                  \"lst_nm\":\"LOHANO\",\n                  \"frst_nm\":\"JAIVANTI\",\n                  \"source\":\"apm\",\n                  \"quality_category_score\":\"94.6\",\n                  \"ACI_category_score\":\"86.7\",\n                  \"IA_category_score\":\"40\",\n                  \"final_MIPS_score\":\"93.3\"\n               }\n            ]\n         }\n      }\n   },\n   \"taxpayerIdentificationNumber\":\"000101010\",\n   \"performanceYear\":2017,\n   \"entityType\":\"group\",\n   \"displayName\":\"Jaivanti Lohano\"\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"taxpayerIdentificationNumber\": \"000101010\",\n  \"nationalProviderIdentifier\": \"0111001010\",\n  \"performanceYear\": 2017,\n  \"entityType\": \"individual\",\n  \"displayName\": \"Bridget Wenlock of Carmel Hospital\",\n  \"details\": {\n    \"quality\": {\n      \"activities\": [],\n      \"downloadable\": {\n      \t\"rows\": [],\n      \t\"columns\": []\n      },\n      \"performanceCategories\": []\n    },\n    \"aci\": {\n      \"activities\": [],\n      \"downloadable\": {\n      \t\"rows\": [],\n      \t\"columns\": []\n      },\n      \"performanceCategories\": []\n    },\n    \"ia\": {\n      \"activities\": [],\n      \"downloadable\": {\n      \t\"rows\": [],\n      \t\"columns\": []\n      },\n      \"performanceCategories\": []\n    },\n    \"finalScore\": {\n    \t\"downloadable\": {\n    \t\t\"rows\": [],\n      \t\t\"columns\": []\n    \t}\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"taxpayerIdentificationNumber\": \"000101010\",\n  \"nationalProviderIdentifier\": \"0111000202\",\n  \"performanceYear\": 2017,\n  \"entityType\": \"individual\",\n  \"displayName\": \"Bridget Wenlock of Carmel Hospital\",\n  \"details\": {\n    \"quality\": {\n    \t\"activities\": [],\n      \"downloadable\": {\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ],\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"name\": \"MIPS Cardiovascular Measures\",\n          \"description\": \"Measure Description for MIPS Cardiovascular Measures: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"categoryType\": \"MIPS\",\n          \"measures\": [],\n          \"categoryId\": \"MIPS_CARDIO\"\n        }\n      ]\n    },\n    \"aci\": {\n      \"activities\": [\n        {\n          \"activityId\": \"ACI_EC_attest1\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest1 (ACI)\",\n          \"description\": \"Measure Description for ACI Attestation One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        },\n        {\n          \"activityId\": \"ACI_EC_attest2\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest2 (ACI)\",\n          \"description\": \"Measure Description for ACI Attestation Two: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\"\n        }\n      ],\n      \"downloadable\": {\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ],\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"categoryId\": \"ACI_CAT1\",\n          \"categoryType\": \"ACI\",\n          \"name\": \"ACI Category One Title\",\n          \"description\": \"Full Description for ACI Category One: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"measures\": [\n            {\n              \"measureId\": \"ACI_EC_001_overall\",\n              \"name\": \"Measure Title for ACI 001\",\n              \"description\": \"Measure Description for ACI One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 56,\n              \"scoreType\": \"PERCENTAGE\"\n            },\n            {\n              \"measureId\": \"ACI_EP_234\",\n              \"name\": \"Measure Title for ACI 002\",\n              \"description\": \"Measure Description for ACI Measure Two: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n              \"score\": 83,\n              \"scoreType\": \"PERCENTAGE\"\n            }\n          ]\n        }\n      ]\n    },\n    \"ia\": {\n      \"activities\": [\n        {\n          \"activityId\": \"IA_EC_attest1\",\n          \"status\": \"Y\",\n          \"name\": \"Attestation title for attest1\",\n          \"description\": \"Measure Description for IA Attestation One: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        },\n        {\n          \"activityId\": \"IA_EC_attest2\",\n          \"status\": \"N\",\n          \"name\": \"Attestation title for attest2\",\n          \"description\": \"Measure Description for IA Attestation Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n          \"externalLink\": \"http://data.medicare.gov\"\n        }\n      ],\n      \"downloadable\": {\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ],\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"categoryId\": \"IA_Category1\",\n          \"categoryType\": \"IA_Measures\",\n          \"name\": \"IA Measure Category One\",\n          \"description\": \"IA Measure Category One: description one\",\n          \"measures\": [\n            {\n              \"measureId\": \"IA_EC_001\",\n              \"name\": \"IA 001 Measure Title\",\n              \"description\": \"Measure Description for IA One: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 4,\n              \"scoreType\": \"STAR\"\n            }\n          ]\n        },\n        {\n          \"categoryId\": \"IA_Category2\",\n          \"categoryType\": \"IA_Measures\",\n          \"name\": \"IA Measure Category Two (title two)\",\n          \"description\": \"IA Measure Category Two: description two\",\n          \"measures\": [\n            {\n              \"measureId\": \"IA_EC_002\",\n              \"name\": \"IA 002 Measure Title\",\n              \"description\": \"Measure Description for IA Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\n              \"score\": 78,\n              \"scoreType\": \"PERCENTAGE\"\n            }\n          ]\n        }\n      ]\n    },\n    \"finalScore\": {\n    \t\"downloadable\": {\n        \t\"rows\": [\n\t          {\n\t            \"frst_nm\": \"Bridget\",\n\t            \"lst_nm\": \"Wenlock\",\n\t            \"ind_pac_ind\": \"0012345678\",\n\t            \"npi\": \"1234567890\"\n\t          },\n\t          {\n\t            \"frst_nm\": \"Bridget\",\n\t            \"lst_nm\": \"Wenlock\",\n\t            \"ind_pac_ind\": \"0012345678\",\n\t            \"npi\": \"1234567890\"\n\t          }\n\t        ],\n\t        \"columns\": [\n\t          {\n\t            \"varname\": \"npi\",\n\t            \"label\": \"NPI\",\n\t            \"description\": \"\",\n\t            \"suppressed\": false\n\t          },\n\t          {\n\t            \"varname\": \"ind_pac_ind\",\n\t            \"label\": \"PAC ID\",\n\t            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n\t            \"suppressed\": true\n\t          },\n\t          {\n\t            \"varname\": \"lst_nm\",\n\t            \"label\": \"Last Name\",\n\t            \"description\": \"Individual clinician last name\",\n\t            \"suppressed\": false\n\t          },\n\t          {\n\t            \"varname\": \"frst_nm\",\n\t            \"label\": \"First Name\",\n\t            \"description\": \"Individual clinician first name\",\n\t            \"suppressed\": false\n\t          }\n\t        ]\n      }\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 2-No Final Score",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"taxpayerIdentificationNumber\": \"000101010\",\n  \"nationalProviderIdentifier\": \"0111000202\",\n  \"performanceYear\": 2017,\n  \"entityType\": \"individual\",\n  \"displayName\": \"Bridget Wenlock of Carmel Hospital\",\n  \"details\": {\n    \"quality\": {\n    \t\"activities\": [],\n      \"downloadable\": {\n        \"rows\": [\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          },\n          {\n            \"frst_nm\": \"Bridget\",\n            \"lst_nm\": \"Wenlock\",\n            \"ind_pac_ind\": \"0012345678\",\n            \"npi\": \"1234567890\"\n          }\n        ],\n        \"columns\": [\n          {\n            \"varname\": \"npi\",\n            \"label\": \"NPI\",\n            \"description\": \"\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"ind_pac_ind\",\n            \"label\": \"PAC ID\",\n            \"description\": \"Unique individual clinician ID assigned by PECOS\",\n            \"suppressed\": true\n          },\n          {\n            \"varname\": \"lst_nm\",\n            \"label\": \"Last Name\",\n            \"description\": \"Individual clinician last name\",\n            \"suppressed\": false\n          },\n          {\n            \"varname\": \"frst_nm\",\n            \"label\": \"First Name\",\n            \"description\": \"Individual clinician first name\",\n            \"suppressed\": false\n          }\n        ]\n      },\n      \"performanceCategories\": [\n        {\n          \"name\": \"MIPS Cardiovascular Measures\",\n          \"description\": \"Measure Description for MIPS Cardiovascular Measures: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\",\n          \"categoryType\": \"MIPS\",\n          \"measures\": [],\n          \"categoryId\": \"MIPS_CARDIO\"\n        }\n      ]\n    },\n    \"aci\": {\n      \"activities\": [],\n      \"downloadable\": {\n        \"columns\": [],\n        \"rows\": []\n      },\n      \"performanceCategories\": []\n    },\n    \"ia\": {\n      \"activities\": [],\n      \"downloadable\": {\n        \"columns\": [],\n        \"rows\": []\n      },\n      \"performanceCategories\": []\n    },\n    \"finalScore\": {\n    \t\"downloadable\": {\n        \t\"rows\": [],\n\t        \"columns\": []\n      }\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 2-Quality Partial",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"taxpayerIdentificationNumber\": \"000101010\",\n  \"nationalProviderIdentifier\": \"0111000202\",\n  \"performanceYear\": 2017,\n  \"entityType\": \"individual\",\n  \"displayName\": \"Bridget Wenlock of Carmel Hospital\",\n  \"details\": {\n      \"quality\": {\n        \"activities\": [],\n        \"downloadable\": {\n          \"rows\": [\n            {\n              \"NPI\": \"0096699299\",\n              \"lst_nm\": \"TAYLOR\",\n              \"frst_nm\": \"JAANNA\",\n              \"invs_msr\": \"N\",\n              \"prf_rate\": \"100\",\n              \"Ind_PAC_ID\": \"5496839037\",\n              \"measure_ID\": \"MIPS_EC_426_overall\",\n              \"live_site_IND\": \"N\",\n              \"measure_title\": \"Post-Anesthetic Transfer of Care Measure: Procedure Room to a Post Anesthesia Care Unit (PACU)\",\n              \"patient_count\": \"287\",\n              \"collection_type\": \"REG\",\n              \"attestation_value\": \" \"\n            },\n            {\n              \"NPI\": \"0096699299\",\n              \"lst_nm\": \"TAYLOR\",\n              \"frst_nm\": \"JAANNA\",\n              \"invs_msr\": \"N\",\n              \"prf_rate\": \"100\",\n              \"Ind_PAC_ID\": \"5496839037\",\n              \"measure_ID\": \"QCDR_EC_AQI37_overall\",\n              \"live_site_IND\": \"Y\",\n              \"measure_title\": \"Surgical Safety Checklist – Applicable Safety Checks Completed Before Induction of Anesthesia\",\n              \"patient_count\": \"287\",\n              \"collection_type\": \"QCDR\",\n              \"attestation_value\": \" \"\n            }\n          ],\n          \"columns\": [\n            {\n              \"label\": \"NPI\",\n              \"varname\": \"NPI\",\n              \"suppressed\": false,\n              \"description\": \"NPI\"\n            },\n            {\n              \"label\": \"PAC ID\",\n              \"varname\": \"Ind_PAC_ID\",\n              \"suppressed\": false,\n              \"description\": \"Unique individual clinician ID assigned by PECOS\"\n            },\n            {\n              \"label\": \"Last Name\",\n              \"varname\": \"lst_nm\",\n              \"suppressed\": false,\n              \"description\": \"Individual clinician last name\"\n            },\n            {\n              \"label\": \"First Name\",\n              \"varname\": \"frst_nm\",\n              \"suppressed\": false,\n              \"description\": \"Individual clinician first name\"\n            },\n            {\n              \"label\": \"Measure Identifier\",\n              \"varname\": \"measure_ID\",\n              \"suppressed\": false,\n              \"description\": \"Components of measure ID  [program]_[reporting entity]_[measure number]_[stratum], where program is defined as MIPS , QCDR , or CAHPS , reporting entity is indicated as EC for individual eligible clinician, measure number denotes the MIPS or QCDR measure number, and a suffix indicating whether it is an overall rate or a single stratum.\"\n            },\n            {\n              \"label\": \"Quality Title\",\n              \"varname\": \"measure_title\",\n              \"suppressed\": false,\n              \"description\": \"Quality measure or attestation title\"\n            },\n            {\n              \"label\": \"Inverse Measure\",\n              \"varname\": \"invs_msr\",\n              \"suppressed\": false,\n              \"description\": \"Indicator for inverse measures\"\n            },\n            {\n              \"label\": \"Attestation Value\",\n              \"varname\": \"attestation_value\",\n              \"suppressed\": false,\n              \"description\": \"Attestation Value\"\n            },\n            {\n              \"label\": \"Measure Performance Rate\",\n              \"varname\": \"prf_rate\",\n              \"suppressed\": false,\n              \"description\": \"Measure performance rate\"\n            },\n            {\n              \"label\": \"Denominator Count\",\n              \"varname\": \"patient_count\",\n              \"suppressed\": false,\n              \"description\": \"Number of patients included in the measure denominator\"\n            },\n            {\n              \"label\": \"Collection Type\",\n              \"varname\": \"collection_type\",\n              \"suppressed\": false,\n              \"description\": \"Collection types are defined as  ADC for Administrative Claims, CLM for Claims, REG for Qualified Registry,  QCDR for Qualified Clinical Data Registry, and EHR for Electronic Health Record.\"\n            },\n            {\n              \"label\": \"Reported on PC Live Site\",\n              \"varname\": \"live_site_IND\",\n              \"suppressed\": false,\n              \"description\": \"Indicator for whether or not the measure/attestation is reported on the Physician Compare live site (i.e., measures with an N value are only available in the downloadable dataset).\"\n            }\n          ]\n        },\n        \"performanceCategories\": [\n          {\n            \"name\": \"Qualified Clinical Data Registry\",\n            \"measures\": [\n              {\n                \"name\": \"Completing a safety checklist before giving anesthesia.\",\n                \"score\": 100,\n                \"measureId\": \"QCDR_EC_AQI37_overall\",\n                \"scoreType\": \"PERCENTAGE\",\n                \"description\": \"<p>A higher score is better because it means this clinician completed a surgical safety checklist for more patients before giving anesthesia.</p> <p>Surgical safety checklists help confirm that surgery is performed on the correct patient, uses the correct equipment, and that risk factors like allergies have been discussed and addressed. Use of a surgical safety checklist can reduce the risk of complications from surgery.</p> <p>To give this clinician a score, Medicare looked at the percentage of this clinician's patients who had surgical safety checklists completed before starting anesthesia.</p>\"\n              }\n            ],\n            \"categoryId\": \"QCDR_EC_GENERIC\",\n            \"description\": \"<p>These performance scores were reported by the clinician to Medicare through a Qualified Clinical Data Registry.</p> <p><b>A higher score is better.</b> </p>\",\n            \"categoryType\": \"QCDR\"\n          }\n        ]\n      }\n    }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE-PC",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare?id=0333ec66-4d49-4624-91b6-c0035a7993ac",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "0333ec66-4d49-4624-91b6-c0035a7993ac"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

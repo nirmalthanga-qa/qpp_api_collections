@@ -1,0 +1,923 @@
+{
+  "info": {
+    "_postman_id": "c9479688-e39f-44c1-be04-cc106656a74f",
+    "name": "QualityPaymentProgram_SubmissionAPI",
+    "description": "1. Claims Submission\n2. CMS WebInterface Submission\n3. ACR Submission",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-c9479688-e39f-44c1-be04-cc106656a74f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Claims Submission in Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submission\": {\n    \"programName\": \"mips\",\n    \"entityType\": \"group\",\n    \"taxpayerIdentificationNumber\": \"000256215\",\n    \"performanceYear\": 2018\n  },\n  \"category\": \"quality\",\n  \"submissionMethod\": \"claims\",\n  \"performanceStart\": \"2018-01-01\",\n  \"performanceEnd\": \"2018-12-31\",\n  \"measurements\": [\n    {\n      \"measureId\": \"130\",\n      \"value\": {\n        \"isEndToEndReported\": false,\n        \"performanceMet\": 21,\n        \"eligiblePopulationExclusion\": 0,\n        \"eligiblePopulationException\": 0,\n        \"performanceNotMet\": 0,\n        \"eligiblePopulation\": 21\n      }\n    },\n    {\n      \"measureId\": \"226\",\n      \"value\": {\n        \"isEndToEndReported\": false,\n        \"strata\": [\n          {\n            \"performanceMet\": 17,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 2,\n            \"eligiblePopulation\": 19,\n            \"stratum\": \"screenedForUse\"\n          },\n          {\n            \"performanceMet\": 0,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 18,\n            \"stratum\": \"overall\"\n          },\n          {\n            \"performanceMet\": 17,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 2,\n            \"eligiblePopulation\": 19,\n            \"stratum\": \"tobacco\"\n          }\n        ]\n      }\n    },\n    {\n      \"measureId\": \"317\",\n      \"value\": {\n        \"isEndToEndReported\": false,\n        \"performanceMet\": 21,\n        \"eligiblePopulationExclusion\": 0,\n        \"eligiblePopulationException\": 0,\n        \"performanceNotMet\": 0,\n        \"eligiblePopulation\": 21\n      }\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        },
+        "description": "Claims Submission in Dev environment "
+      },
+      "response": []
+    },
+    {
+      "name": "Claims Submission in Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\n\"entityType\": \"virtualGroup\",\n\"entityId\": \"fake02\",\n\"performanceYear\": 2018}, \n\"category\": \"quality\", \n\"submissionMethod\": \n\"registry\", \n\"performanceStart\": \"2018-01-01\", \n\"performanceEnd\": \"2018-12-31\", \n\"measurements\":[  {\n          \"measureId\": \"195\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"332\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"436\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 10000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"141\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 9000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"109\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 3779,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 6221,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"131\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 2613,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 7387,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"138\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 7000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"191\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"007\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"strata\": [\n              {\n                \"performanceMet\": 7702,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 2298,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"LVSD\"\n              },\n              {\n                \"performanceMet\": 8001,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 1999,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"priorMI\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"348\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"strata\": [\n              {\n                \"performanceMet\": 10000,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"30\"\n              },\n              {\n                \"performanceMet\": 10000,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"90\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        },
+        "description": "Claims Submission in Imp"
+      },
+      "response": []
+    },
+    {
+      "name": "CMSWebInterface Submission in Dev (Gr User)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\r\n\"entityType\": \"individual\",\r\n  \"taxpayerIdentificationNumber\": \"000837462\",\r\n  \"nationalProviderIdentifier\": \"0002357693\",\r\n\"performanceYear\": \"2018\"}, \r\n\"category\": \"quality\", \r\n\"submissionMethod\": \r\n\"cmsWebInterface\", \r\n\"performanceStart\": \"2018-01-01\", \r\n\"performanceEnd\": \"2018-12-31\", \r\n\"measurements\": [{\r\n          \"measureId\": \"dmComposite\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"046\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"strata\": [\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"18-64\"\r\n              },\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"65+\"\r\n              },\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"overall\"\r\n              }\r\n            ]\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"110\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"111\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"112\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"113\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"117\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"128\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"134\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"204\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"226\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"236\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"318\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        }\r\n        ]}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CMSWebInterface Submission in Imp (Gr User)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\r\n\"entityType\": \"group\",\r\n  \"taxpayerIdentificationNumber\": \"000153214\",\r\n\"performanceYear\": 2018}, \r\n\"category\": \"quality\", \r\n\"submissionMethod\": \r\n\"cmsWebInterface\", \r\n\"performanceStart\": \"2018-01-01\", \r\n\"performanceEnd\": \"2018-12-31\", \r\n\"measurements\": [{\r\n          \"measureId\": \"dmComposite\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"046\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"strata\": [\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"18-64\"\r\n              },\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"65+\"\r\n              },\r\n              {\r\n                \"performanceMet\": 100,\r\n                \"eligiblePopulationException\": 0,\r\n                \"eligiblePopulationExclusion\": 0,\r\n                \"performanceNotMet\": 0,\r\n                \"eligiblePopulation\": 100,\r\n                \"stratum\": \"overall\"\r\n              }\r\n            ]\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"110\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"438\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"001\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"111\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"112\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"113\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"117\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"128\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"134\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"204\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 10,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"236\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n         {\r\n          \"measureId\": \"370\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        },\r\n        \r\n        {\r\n          \"measureId\": \"318\",\r\n          \"value\": {\r\n            \"isEndToEndReported\": false,\r\n            \"performanceMet\": 100,\r\n            \"eligiblePopulationException\": 0,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 100\r\n          }\r\n        }\r\n        ]}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CMSWebInterface Submission in Dev for APM Entity",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\n \"entityType\": \"apm\",\n\"entityId\": \"A9564\",\n\"performanceYear\": 2018}, \n\"category\": \"quality\", \n\"submissionMethod\": \n\"cmsWebInterface\", \n\"performanceStart\": \"2018-01-01\", \n\"performanceEnd\": \"2018-12-31\", \n\"measurements\": [{\n          \"measureId\": \"dmComposite\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"046\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"reportingRate\": 100,\n            \"performanceRate\": 66,\n            \"strata\": [\n              {\n                \"performanceMet\": 66,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 33,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"18-64\"\n              },\n              {\n                \"performanceMet\": 66,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 33,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"65+\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"overall\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"110\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"111\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"112\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"113\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"117\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"128\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"134\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"204\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"226\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"strata\": [\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"tobacco\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"overall\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"screenedForUse\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"236\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"318\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"370\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"438\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        }\n        ]}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CMSWebInterface Submission in Imp for APM User",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\n \"entityType\": \"apm\",\n\"entityId\": \"F234\",\n\"performanceYear\": 2018}, \n\"category\": \"quality\", \n\"submissionMethod\": \n\"cmsWebInterface\", \n\"performanceStart\": \"2018-01-01\", \n\"performanceEnd\": \"2018-12-31\", \n\"measurements\": [{\n          \"measureId\": \"dmComposite\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"046\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"reportingRate\": 100,\n            \"performanceRate\": 66,\n            \"strata\": [\n              {\n                \"performanceMet\": 66,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 33,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"18-64\"\n              },\n              {\n                \"performanceMet\": 66,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 33,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"65+\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"overall\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"110\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"111\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"112\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"113\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"117\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"128\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"134\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"204\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"226\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"strata\": [\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"tobacco\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"overall\"\n              },\n              {\n                \"performanceMet\": 100,\n                \"eligiblePopulationException\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 100,\n                \"stratum\": \"screenedForUse\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"236\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"318\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"370\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        },\n        {\n          \"measureId\": \"438\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 100,\n            \"eligiblePopulationException\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"reportingRate\": 100,\n            \"performanceRate\": 100,\n            \"eligiblePopulation\": 100\n          }\n        }\n        ]}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AdministrativeClaims Submission in Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"submission\":\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000110683\",\n  \"performanceYear\": 2018 },\n \n      \"category\": \"quality\",\n      \"submissionMethod\": \"administrativeClaims\",\n      \"performanceStart\": \"2018-01-01\",\n      \"performanceEnd\": \"2018-06-01\",\n      \"measurements\": [{\n        \"measureId\": \"458\",\n        \"value\": {\n          \"score\": 10,\n          \"details\": {\n            \"numberOfIndexAdmissions\": 805,\n            \"numberOfReadmissions\": 85,\n            \"indexReadmissionDiagnosisPairCounts\": [{\n                \"indexAdmissionCode\": \"106\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 14,\n                \"indexDescription\": \"Cardiac dysrhythmias\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"99\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 5,\n                \"indexDescription\": \"Hypertension with complications and secondary hypertension\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"2\",\n                \"readmissionCode\": \"2\",\n                \"count\": 3,\n                \"indexAdmissionCount\": 44,\n                \"indexDescription\": \"Septicemia (except in labor)\",\n                \"readmissionDescription\": \"Septicemia (except in labor)\"\n              }\n            ],\n            \"indexAdmissionCountByDiagnosis\": [{\n                \"code\": \"203\",\n                \"count\": 7,\n                \"description\": \"Osteoarthritis\"\n              },\n              {\n                \"code\": \"122\",\n                \"count\": 8,\n                \"description\": \"Pneumonia (except that caused by tuberculosis or sexually transmitted disease)\"\n              }\n            ],\n            \"readmissionCountByDiagnosis\": [{\n                \"code\": \"237\",\n                \"count\": 7,\n                \"description\": \"Complication of device; implant or graft\"\n              },\n              {\n                \"code\": \"127\",\n                \"count\": 4,\n                \"description\": \"Chronic obstructive pulmonary disease and bronchiectasis\"\n              }\n            ],\n            \"plannedReadmissions\": 3\n          }\n        }\n      }]\n    \n      }\n"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AdministrativeClaims Submission in Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"submission\":\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000583721\",\n  \"performanceYear\": 2018 },\n \n      \"category\": \"quality\",\n      \"submissionMethod\": \"administrativeClaims\",\n      \"performanceStart\": \"2018-01-01\",\n      \"performanceEnd\": \"2018-06-01\",\n      \"measurements\": [{\n        \"measureId\": \"458\",\n        \"value\": {\n          \"score\": 10,\n          \"details\": {\n            \"numberOfIndexAdmissions\": 805,\n            \"numberOfReadmissions\": 85,\n            \"indexReadmissionDiagnosisPairCounts\": [{\n                \"indexAdmissionCode\": \"106\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 14,\n                \"indexDescription\": \"Cardiac dysrhythmias\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"99\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 5,\n                \"indexDescription\": \"Hypertension with complications and secondary hypertension\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"2\",\n                \"readmissionCode\": \"2\",\n                \"count\": 3,\n                \"indexAdmissionCount\": 44,\n                \"indexDescription\": \"Septicemia (except in labor)\",\n                \"readmissionDescription\": \"Septicemia (except in labor)\"\n              }\n            ],\n            \"indexAdmissionCountByDiagnosis\": [{\n                \"code\": \"203\",\n                \"count\": 7,\n                \"description\": \"Osteoarthritis\"\n              },\n              {\n                \"code\": \"122\",\n                \"count\": 8,\n                \"description\": \"Pneumonia (except that caused by tuberculosis or sexually transmitted disease)\"\n              }\n            ],\n            \"readmissionCountByDiagnosis\": [{\n                \"code\": \"237\",\n                \"count\": 7,\n                \"description\": \"Complication of device; implant or graft\"\n              },\n              {\n                \"code\": \"127\",\n                \"count\": 4,\n                \"description\": \"Chronic obstructive pulmonary disease and bronchiectasis\"\n              }\n            ],\n            \"plannedReadmissions\": 3\n          }\n        }\n      }]\n    \n      }\n"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CAHPS Submission in Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"submission\": {\r\n    \"entityType\": \"apm\",\r\n  \"entityId\": \"OCM-977\",\r\n    \"performanceYear\": 2018\r\n  },\r\n  \"category\": \"quality\",\r\n  \"performanceStart\": \"2018-01-01\",\r\n  \"performanceEnd\": \"2018-06-01\",\r\n  \"submissionMethod\": \"certifiedSurveyVendor\",\r\n  \"measurements\": [ {\r\n          \"measureId\": \"CAHPS_ACO_1\",\r\n          \"value\": {\r\n            \"score\": 85,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_2\",\r\n          \"value\": {\r\n            \"score\": 50,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_3\",\r\n          \"value\": {\r\n            \"score\": 92,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_4\",\r\n          \"value\": {\r\n            \"score\": 82,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_5\",\r\n          \"value\": {\r\n            \"score\": 60,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_6\",\r\n          \"value\": {\r\n            \"score\": 77,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_ACO_34\",\r\n          \"value\": {\r\n            \"score\": 70,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"321\",\r\n          \"value\": {\r\n            \"score\": 6.13,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        }\r\n      ]\r\n}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CAHPS Submission in Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"submission\": {\r\n\"entityType\": \"group\",\r\n    \"taxpayerIdentificationNumber\": \"000182736\",\r\n    \"performanceYear\": 2018\r\n  },\r\n  \"category\": \"quality\",\r\n  \"performanceStart\": \"2018-01-01\",\r\n  \"performanceEnd\": \"2018-06-01\",\r\n  \"submissionMethod\": \"certifiedSurveyVendor\",\r\n  \"measurements\": [ {\r\n          \"measureId\": \"CAHPS_1\",\r\n          \"value\": {\r\n            \"score\": 82.45,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_2\",\r\n          \"value\": {\r\n            \"score\": 92.91,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_3\",\r\n          \"value\": {\r\n            \"score\": 92.12,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_4\",\r\n          \"value\": {\r\n            \"score\": 84.67,\r\n            \"reliability\": \"veryLow\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_5\",\r\n          \"value\": {\r\n            \"score\": 62.43,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_6\",\r\n          \"value\": {\r\n            \"score\": 75.55,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_7\",\r\n          \"value\": {\r\n            \"score\": 72.23,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n        {\r\n          \"measureId\": \"CAHPS_8\",\r\n          \"value\": {\r\n            \"score\": 87.82,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n         {\r\n          \"measureId\": \"CAHPS_9\",\r\n          \"value\": {\r\n            \"score\": 94.66,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        },\r\n     \r\n      {\r\n      \t\"measureId\": \"CAHPS_11\",\r\n            \"value\": {\r\n              \"score\": 25.78,\r\n              \"reliability\": \"adequate\",\r\n              \"mask\": false,\r\n              \"isBelowMinimum\": false\r\n            }\r\n          },\r\n     \r\n        {\r\n          \"measureId\": \"321\",\r\n          \"value\": {\r\n            \"score\": 8.6,\r\n            \"reliability\": \"adequate\",\r\n            \"mask\": false,\r\n            \"isBelowMinimum\": false\r\n          }\r\n        }\r\n      ]\r\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cost Measure (Admin. Claims) in Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n{\n  \"submission\": {\n    \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000198267\",\n  \"nationalProviderIdentifier\": \"\",\n    \n    \"performanceYear\": 2018},\n    \n        \"category\": \"cost\",\n      \"performanceStart\": \"2018-01-01\",\n      \"performanceEnd\": \"2018-06-01\",\n        \"submissionMethod\": \"administrativeClaims\",\n        \"measurements\": [{\n                \"measureId\": \"MSPB_1\",\n                \"value\": {\n                    \"score\": 780,\n                    \"details\": {\n                        \"ratio\": 0.39892,\n                        \"eligibleOccurrences\": 100,\n                        \"costPerOccurrence\": 550\n                    }\n                }\n            },\n            {\n                \"measureId\": \"TPCC_1\",\n                \"value\": {\n                    \"score\": 200,\n                    \"details\": {\n                        \"ratio\": 1.59423,\n                        \"eligibleOccurrences\": 525,\n                        \"costPerOccurrence\": 586\n                    }\n                }\n            }\n        ]\n}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cost Measure Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submission\": {\n    \"entityType\": \"group\",\n    \"taxpayerIdentificationNumber\": \"000374657\",\n    \"nationalProviderIdentifier\": \"\",\n    \"performanceYear\": 2018},\n    \n        \"category\": \"cost\",\n      \"performanceStart\": \"2018-01-01\",\n      \"performanceEnd\": \"2018-06-01\",\n        \"submissionMethod\": \"administrativeClaims\",\n        \"measurements\": [{\n                \"measureId\": \"MSPB_1\",\n                \"value\": {\n                    \"score\": 43281,\n                    \"details\": {\n                        \"ratio\": 1.3,\n                        \"eligibleOccurrences\": 150,\n                        \"costPerOccurrence\": 18542\n                    }\n                }\n            },\n            {\n                \"measureId\": \"TPCC_1\",\n                \"value\": {\n                    \"score\": 1000000,\n                    \"details\": {\n                        \"ratio\": 0.8,\n                        \"eligibleOccurrences\": 120,\n                        \"costPerOccurrence\": 10325\n                    }\n                }\n            }\n        ]\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Items and Services Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000153214\",\n  \"performanceYear\": 2017,\n\n   \"details\": {\n    \"eligibleBeneficiaries\": 100,\n    \"beneficiariesWithVisits\": 10,\n    \"totalVisits\": 1000\n  }\n}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/clinician-insights/items-and-services/emergency-department-utilizations",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "items-and-services",
+            "emergency-department-utilizations"
+          ]
+        },
+        "description": "I&S Data in Dev"
+      },
+      "response": []
+    },
+    {
+      "name": "Items and Services Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          },
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000110683",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000091235\",\n  \"performanceYear\": 2017,\n\n   \"details\": {\n    \"eligibleBeneficiaries\": 100,\n    \"beneficiariesWithVisits\": 10,\n    \"totalVisits\": 1000\n  }\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/clinician-insights/items-and-services/emergency-department-utilizations",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "items-and-services",
+            "emergency-department-utilizations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AdministrativeClaims Submission in Prod",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"submission\":\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000594263\",\n  \"performanceYear\": 2017 },\n \n      \"category\": \"quality\",\n      \"submissionMethod\": \"administrativeClaims\",\n      \"performanceStart\": \"2017-01-01\",\n      \"performanceEnd\": \"2017-06-01\",\n      \"measurements\": [{\n        \"measureId\": \"458\",\n        \"value\": {\n          \"score\": 0.1,\n          \"details\": {\n            \"numberOfIndexAdmissions\": 805,\n            \"numberOfReadmissions\": 85,\n            \"indexReadmissionDiagnosisPairCounts\": [{\n                \"indexAdmissionCode\": \"106\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 14,\n                \"indexDescription\": \"Cardiac dysrhythmias\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"99\",\n                \"readmissionCode\": \"108\",\n                \"count\": 1,\n                \"indexAdmissionCount\": 5,\n                \"indexDescription\": \"Hypertension with complications and secondary hypertension\",\n                \"readmissionDescription\": \"Congestive heart failure; nonhypertensive\"\n              },\n              {\n                \"indexAdmissionCode\": \"2\",\n                \"readmissionCode\": \"2\",\n                \"count\": 3,\n                \"indexAdmissionCount\": 44,\n                \"indexDescription\": \"Septicemia (except in labor)\",\n                \"readmissionDescription\": \"Septicemia (except in labor)\"\n              }\n            ],\n            \"indexAdmissionCountByDiagnosis\": [{\n                \"code\": \"203\",\n                \"count\": 7,\n                \"description\": \"Osteoarthritis\"\n              },\n              {\n                \"code\": \"122\",\n                \"count\": 8,\n                \"description\": \"Pneumonia (except that caused by tuberculosis or sexually transmitted disease)\"\n              }\n            ],\n            \"readmissionCountByDiagnosis\": [{\n                \"code\": \"237\",\n                \"count\": 7,\n                \"description\": \"Complication of device; implant or graft\"\n              },\n              {\n                \"code\": \"127\",\n                \"count\": 4,\n                \"description\": \"Chronic obstructive pulmonary disease and bronchiectasis\"\n              }\n            ],\n            \"plannedReadmissions\": 3\n          }\n        }\n      }]\n    \n      }\n"
+        },
+        "url": {
+          "raw": "https://qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "https",
+          "host": [
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Items and Services in Prod",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\n{\n  \"entityType\": \"group\",\n  \"taxpayerIdentificationNumber\": \"000594263\",\n  \"performanceYear\": 2018,\n\n   \"details\": {\n    \"eligibleBeneficiaries\": 100,\n    \"beneficiariesWithVisits\": 10,\n    \"totalVisits\": 1000\n  }\n}"
+        },
+        "url": {
+          "raw": "https://qpp.cms.gov/api/clinician-insights/items-and-services/emergency-department-utilizations",
+          "protocol": "https",
+          "host": [
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "items-and-services",
+            "emergency-department-utilizations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cost measures in Prod",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submission\": {\n    \"entityType\": \"group\",\n    \"taxpayerIdentificationNumber\": \"000594263\",\n    \"nationalProviderIdentifier\": null,\n    \"performanceYear\": 2017},\n    \n        \"category\": \"cost\",\n      \"performanceStart\": \"2017-01-01\",\n      \"performanceEnd\": \"2017-06-01\",\n        \"submissionMethod\": \"administrativeClaims\",\n        \"measurements\": [{\n                \"measureId\": \"MSPB_1\",\n                \"value\": {\n                    \"score\": 780,\n                    \"details\": {\n                        \"ratio\": 0.39,\n                        \"eligibleOccurrences\": 300,\n                        \"costPerOccurrence\": 700\n                    }\n                }\n            },\n            {\n                \"measureId\": \"TPCC_1\",\n                \"value\": {\n                    \"score\": 2000,\n                    \"details\": {\n                        \"ratio\": 1,\n                        \"eligibleOccurrences\": 5000,\n                        \"costPerOccurrence\": 3000\n                    }\n                }\n            }\n        ]\n}"
+        },
+        "url": {
+          "raw": "https://qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "https",
+          "host": [
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EarlyClaims in Prod",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submission\": {\n    \"programName\": \"mips\",\n    \"entityType\": \"group\",\n    \"taxpayerIdentificationNumber\": \"000594263\",\n    \"performanceYear\": 2018\n  },\n  \"category\": \"quality\",\n  \"submissionMethod\": \"claims\",\n  \"performanceStart\": \"2018-01-01\",\n  \"performanceEnd\": \"2018-12-31\",\n  \"measurements\": [\n     {\n          \"measureId\": \"039\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 0\n          }\n        },\n        {\n          \"measureId\": \"047\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 0\n          }\n        },\n        {\n          \"measureId\": \"048\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n        {\n          \"measureId\": \"110\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"111\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"112\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"113\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"128\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"130\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"131\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 3647,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 3745\n          }\n        },\n           {\n          \"measureId\": \"134\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"154\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"181\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n           {\n          \"measureId\": \"182\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 2593,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 169,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 3745\n          }\n        },\n           {\n          \"measureId\": \"317\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        }\n  ]\n}"
+        },
+        "url": {
+          "raw": "https://qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "https",
+          "host": [
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EarlyClaims in Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"submission\": {\n    \"entityType\": \"individual\",\n    \"taxpayerIdentificationNumber\": \"999192724\",\n    \"nationalProviderIdentifier\": \"8884735038\",\n    \"performanceYear\": 2018\n  },\n  \"measurements\": [\n    {\n      \n      \n          \"measureId\": \"021\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 5\n          }\n        },\n        {\n          \"measureId\": \"024\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n        {\n          \"measureId\": \"039\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 135\n          }\n        },\n        {\n          \"measureId\": \"047\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 217\n          }\n        },\n        {\n          \"measureId\": \"048\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 166\n          }\n        },\n        {\n          \"measureId\": \"109\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 91\n          }\n        },\n        {\n          \"measureId\": \"110\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 66\n          }\n        },\n        {\n          \"measureId\": \"111\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 217\n          }\n        },\n        {\n          \"measureId\": \"112\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 42\n          }\n        },\n        {\n          \"measureId\": \"113\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 61\n          }\n        },\n        {\n          \"measureId\": \"128\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 36,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 220\n          }\n        },\n        {\n          \"measureId\": \"130\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 56,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 292\n          }\n        },\n        {\n          \"measureId\": \"131\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 57,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 292\n          }\n        },\n        {\n          \"measureId\": \"134\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 220\n          }\n        },\n        {\n          \"measureId\": \"145\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 235,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 243\n          }\n        },\n        {\n          \"measureId\": \"154\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 217\n          }\n        },\n        {\n          \"measureId\": \"181\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 217\n          }\n        },\n        {\n          \"measureId\": \"182\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 292\n          }\n        },\n        {\n          \"measureId\": \"226\",\n          \"value\": {\n            \"strata\": [\n              {\n                \"performanceMet\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"eligiblePopulationException\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 0,\n                \"stratum\": \"intervention\"\n              },\n              {\n                \"performanceMet\": 36,\n                \"eligiblePopulationExclusion\": 0,\n                \"eligiblePopulationException\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 220,\n                \"stratum\": \"overall\"\n              },\n              {\n                \"performanceMet\": 0,\n                \"eligiblePopulationExclusion\": 0,\n                \"eligiblePopulationException\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 220,\n                \"stratum\": \"screenedForUse\"\n              }\n            ],\n            \"isEndToEndReported\": false\n          }\n        },\n        {\n          \"measureId\": \"236\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 0,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 1\n          }\n        },\n        {\n          \"measureId\": \"317\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 36,\n            \"eligiblePopulationExclusion\": 0,\n            \"eligiblePopulationException\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 220\n          }\n        }\n      ],\n    \n   \"category\": \"quality\",\n      \"submissionMethod\": \"claims\",\n      \"performanceStart\": \"2018-01-01\",\n      \"performanceEnd\": \"2018-12-31\",\n      \"programName\": \"mips\"\n      }"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "VirtualGroup in Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\": {\n\"entityType\": \"virtualGroup\",\n\"entityId\": \"fake02\",\n\"performanceYear\": 2018}, \n\"category\": \"quality\", \n\"submissionMethod\": \n\"registry\", \n\"performanceStart\": \"2018-01-01\", \n\"performanceEnd\": \"2018-12-31\", \n\"measurements\":[  {\n          \"measureId\": \"195\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"332\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"436\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"performanceMet\": 10000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"141\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 9000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"109\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 3779,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 6221,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"131\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 2613,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 7387,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"138\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 7000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"191\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"performanceMet\": 6000,\n            \"eligiblePopulationExclusion\": 0,\n            \"performanceNotMet\": 0,\n            \"eligiblePopulation\": 10000\n          }\n        },\n        {\n          \"measureId\": \"007\",\n          \"value\": {\n            \"isEndToEndReported\": false,\n            \"strata\": [\n              {\n                \"performanceMet\": 7702,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 2298,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"LVSD\"\n              },\n              {\n                \"performanceMet\": 8001,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 1999,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"priorMI\"\n              }\n            ]\n          }\n        },\n        {\n          \"measureId\": \"348\",\n          \"value\": {\n            \"isEndToEndReported\": true,\n            \"strata\": [\n              {\n                \"performanceMet\": 10000,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"30\"\n              },\n              {\n                \"performanceMet\": 10000,\n                \"eligiblePopulationExclusion\": 0,\n                \"performanceNotMet\": 0,\n                \"eligiblePopulation\": 10000,\n                \"stratum\": \"90\"\n              }\n            ]\n          }\n        }\n      ]\n    }\n"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Items and Services - Summary Reports",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"entityType\": \"group\",\r\n    \"taxpayerIdentificationNumber\": \"999810569\",\r\n    \"performanceYear\": 2018,\r\n\r\n    \"details\": {\r\n\r\n        \"cpt0\": {\r\n            \"totalCostAll\": 0,\r\n            \"totalCostBilled\": 0,\r\n            \"uniqueBeneCountAll\": 0,\r\n            \"totalServiceCountAll\": 0,\r\n            \"uniqueBeneCountBilled\": 0,\r\n            \"totalServiceCountBilled\": 0\r\n        },\r\n\r\n        \"cpt1\": {\r\n            \"totalCostAll\": 80,\r\n            \"totalCostBilled\": 39,\r\n            \"uniqueBeneCountAll\": 74,\r\n            \"totalServiceCountAll\": 511,\r\n            \"uniqueBeneCountBilled\": 42,\r\n            \"totalServiceCountBilled\": 53\r\n          },\r\n          \"cpt2\": {\r\n            \"totalCostAll\": 859,\r\n            \"totalCostBilled\": 856,\r\n            \"uniqueBeneCountAll\": 261,\r\n            \"totalServiceCountAll\": 38,\r\n            \"uniqueBeneCountBilled\": 973,\r\n            \"totalServiceCountBilled\": 369\r\n          },\r\n          \"cpt3\": {\r\n            \"totalCostAll\": 717,\r\n            \"totalCostBilled\": 466,\r\n            \"uniqueBeneCountAll\": 65,\r\n            \"totalServiceCountAll\": 477,\r\n            \"uniqueBeneCountBilled\": 580,\r\n            \"totalServiceCountBilled\": 551\r\n          },\r\n          \"hcpcsA\": {\r\n            \"totalCostAll\": 935,\r\n            \"totalCostBilled\": 380,\r\n            \"uniqueBeneCountAll\": 833,\r\n            \"totalServiceCountAll\": 177,\r\n            \"uniqueBeneCountBilled\": 589,\r\n            \"totalServiceCountBilled\": 106\r\n          },\r\n          \"hcpcsB\": {\r\n            \"totalCostAll\": 613,\r\n            \"totalCostBilled\": 744,\r\n            \"uniqueBeneCountAll\": 722,\r\n            \"totalServiceCountAll\": 521,\r\n            \"uniqueBeneCountBilled\": 806,\r\n            \"totalServiceCountBilled\": 19\r\n          },\r\n          \"hcpcsC\": {\r\n            \"totalCostAll\": 176,\r\n            \"totalCostBilled\": 698,\r\n            \"uniqueBeneCountAll\": 742,\r\n            \"totalServiceCountAll\": 320,\r\n            \"uniqueBeneCountBilled\": 744,\r\n            \"totalServiceCountBilled\": 427\r\n          }\r\n    }\r\n}\r\n"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/clinician-insights/items-and-services/summary-reports",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "items-and-services",
+            "summary-reports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dev - I&S Summary Reports ",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n        \"performanceYear\": 2018,\n        \"taxpayerIdentificationNumber\": \"000498773\",\n        \"entityType\": \"group\",\n        \"details\": {\n          \"cpt0\": {\n            \"totalCostAll\": 132177.5899999999,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 296,\n            \"totalServiceCountAll\": 844,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt1\": {\n            \"totalCostAll\": 369668.95,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 280,\n            \"totalServiceCountAll\": 1748,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt2\": {\n            \"totalCostAll\": 119990.66000000008,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 131,\n            \"totalServiceCountAll\": 347,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt3\": {\n            \"totalCostAll\": 174369.88999999993,\n            \"totalCostBilled\": 465.86,\n            \"uniqueBeneCountAll\": 530,\n            \"totalServiceCountAll\": 2911,\n            \"uniqueBeneCountBilled\": 3,\n            \"totalServiceCountBilled\": 5\n          },\n          \"cpt4\": {\n            \"totalCostAll\": 84593.93,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 131,\n            \"totalServiceCountAll\": 291,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt5\": {\n            \"totalCostAll\": 109654.85,\n            \"totalCostBilled\": 22000.06999999998,\n            \"uniqueBeneCountAll\": 183,\n            \"totalServiceCountAll\": 457,\n            \"uniqueBeneCountBilled\": 83,\n            \"totalServiceCountBilled\": 148\n          },\n          \"cpt6\": {\n            \"totalCostAll\": 182322.8399999999,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 141,\n            \"totalServiceCountAll\": 441,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt7\": {\n            \"totalCostAll\": 1618893.5700000017,\n            \"totalCostBilled\": 1096001.8299999991,\n            \"uniqueBeneCountAll\": 741,\n            \"totalServiceCountAll\": 14672,\n            \"uniqueBeneCountBilled\": 499,\n            \"totalServiceCountBilled\": 9253\n          },\n          \"cpt8\": {\n            \"totalCostAll\": 608296.9700000002,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 606,\n            \"totalServiceCountAll\": 14587,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"cpt9\": {\n            \"totalCostAll\": 2292242.049999999,\n            \"totalCostBilled\": 130634.559999999,\n            \"uniqueBeneCountAll\": 782,\n            \"totalServiceCountAll\": 25508,\n            \"uniqueBeneCountBilled\": 728,\n            \"totalServiceCountBilled\": 897\n          },\n          \"hcpcsA\": {\n            \"totalCostAll\": 317286.7900000002,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 224,\n            \"totalServiceCountAll\": 8745.700000000003,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsB\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsC\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsE\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsG\": {\n            \"totalCostAll\": 416085.73000000033,\n            \"totalCostBilled\": 185441.38,\n            \"uniqueBeneCountAll\": 591,\n            \"totalServiceCountAll\": 4960,\n            \"uniqueBeneCountBilled\": 204,\n            \"totalServiceCountBilled\": 2985\n          },\n          \"hcpcsH\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsJ\": {\n            \"totalCostAll\": 2950177.2399999974,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 267,\n            \"totalServiceCountAll\": 124766,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsK\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsL\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsM\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsP\": {\n            \"totalCostAll\": 227.79,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 13,\n            \"totalServiceCountAll\": 208,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsQ\": {\n            \"totalCostAll\": 41844.36999999998,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 89,\n            \"totalServiceCountAll\": 14224,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsR\": {\n            \"totalCostAll\": 4212.3099999999995,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 12,\n            \"totalServiceCountAll\": 26,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsS\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsT\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          },\n          \"hcpcsV\": {\n            \"totalCostAll\": 0,\n            \"totalCostBilled\": 0,\n            \"uniqueBeneCountAll\": 0,\n            \"totalServiceCountAll\": 0,\n            \"uniqueBeneCountBilled\": 0,\n            \"totalServiceCountBilled\": 0\n          }\n        }\n      }"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/clinician-insights/items-and-services/summary-reports",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "items-and-services",
+            "summary-reports"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer"
+  }
+}

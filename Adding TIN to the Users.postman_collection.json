@@ -1,0 +1,101 @@
+{
+  "info": {
+    "_postman_id": "d9754adb-b94a-48c4-aa66-65ffc7505951",
+    "name": "Adding TIN to the Users",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-d9754adb-b94a-48c4-aa66-65ffc7505951?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "DEV_EIDM 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.qpp.cms.gov.v1+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{jwt}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"authorizations\": [\r\n    {\r\n      \"role\": \"security-official\",\r\n      \"type\": \"practice\",\r\n      \"tin\": \"000110683\"\r\n    }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-dev-internal-1054363189.us-east-1.elb.amazonaws.com/api/auth/internal/harp/users/{{username}}/authorizations",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-dev-internal-1054363189",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "internal",
+            "harp",
+            "users",
+            "{{username}}",
+            "authorizations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "IMPL_EIDM 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.qpp.cms.gov.v1+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"authorizations\": [\r\n    {\r\n    \t\"type\": \"practice\",\r\n      \"role\": \"security-official\",\r\n\"tin\" : \"000043553\"\r\n    }\r\n    ]\r\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/auth/internal/harp/users/sarahdemo/authorizations",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "internal",
+            "harp",
+            "users",
+            "sarahdemo",
+            "authorizations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

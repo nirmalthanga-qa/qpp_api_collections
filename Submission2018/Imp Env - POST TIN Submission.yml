@@ -1,0 +1,313 @@
+info:
+  name: Imp Env - POST TIN Submission
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{json_web_token}}
+  body:
+    type: json
+    data: "{\"submission\":{\r
+
+      \  \"entityType\": \"group\",\r
+
+      \  \"taxpayerIdentificationNumber\": \"000498394\",\r
+
+      \r
+
+      \r
+
+      \  \"performanceYear\": 2018},\r
+
+      \     \r
+
+      \      \"category\": \"quality\",\r
+
+      \      \"performanceStart\": \"2018-01-01\",\r
+
+      \      \"performanceEnd\": \"2018-08-01\",\r
+
+      \      \"submissionMethod\": \"registry\",\r
+
+      \r
+
+      \      \"measurements\": [\r
+
+      \        {\r
+
+      \          \r
+
+      \      \"measureId\": \"195\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 6000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"332\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 6000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"436\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": true,\r
+
+      \       \"performanceMet\": 10000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"141\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 9000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"109\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 3779,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 6221,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"131\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 2613,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 7387,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"138\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 7000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"191\",\r
+
+      \      \"value\": {\r
+
+      \       \"isEndToEndReported\": false,\r
+
+      \       \"performanceMet\": 6000,\r
+
+      \       \"eligiblePopulationExclusion\": 0,\r
+
+      \       \"performanceNotMet\": 0,\r
+
+      \       \"eligiblePopulation\": 10000\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"007\",\r
+
+      \      \"value\": {\r
+
+      \        \"isEndToEndReported\": false,\r
+
+      \        \"strata\": [\r
+
+      \          {\r
+
+      \            \"performanceMet\": 7702,\r
+
+      \            \"eligiblePopulationExclusion\": 0,\r
+
+      \            \"performanceNotMet\": 2298,\r
+
+      \            \"eligiblePopulation\": 10000,\r
+
+      \            \"stratum\": \"LVSD\"\r
+
+      \          },\r
+
+      \          {\r
+
+      \            \"performanceMet\": 8001,\r
+
+      \            \"eligiblePopulationExclusion\": 0,\r
+
+      \            \"performanceNotMet\": 1999,\r
+
+      \            \"eligiblePopulation\": 10000,\r
+
+      \            \"stratum\": \"priorMI\"\r
+
+      \          }\r
+
+      \        ]\r
+
+      \      }\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"measureId\": \"348\",\r
+
+      \      \"value\": {\r
+
+      \        \"isEndToEndReported\": true,\r
+
+      \        \"strata\": [\r
+
+      \          {\r
+
+      \            \"performanceMet\": 10000,\r
+
+      \            \"eligiblePopulationExclusion\": 0,\r
+
+      \            \"performanceNotMet\": 0,\r
+
+      \            \"eligiblePopulation\": 10000,\r
+
+      \            \"stratum\": \"30\"\r
+
+      \          },\r
+
+      \          {\r
+
+      \            \"performanceMet\": 10000,\r
+
+      \            \"eligiblePopulationExclusion\": 0,\r
+
+      \            \"performanceNotMet\": 0,\r
+
+      \            \"eligiblePopulation\": 10000,\r
+
+      \            \"stratum\": \"90\"\r
+
+      \          }\r
+
+      \        ]\r
+
+      \      }\r
+
+      \        \r
+
+      \      \r
+
+      \    }\r
+
+      \      ]}\r
+
+      \      \r
+
+      \r
+
+      \      \r
+
+      \  \r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

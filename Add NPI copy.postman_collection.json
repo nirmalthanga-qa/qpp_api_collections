@@ -1,0 +1,60 @@
+{
+  "info": {
+    "_postman_id": "91bdcbd8-7693-487c-849e-74c1c0a19b4c",
+    "name": "Add NPI copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-91bdcbd8-7693-487c-849e-74c1c0a19b4c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Add NPI Copy",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "type": "text",
+            "value": "application/vnd.qpp.cms.gov.v1+json"
+          },
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"npi\": \"\"\n}"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/auth/internal/users/{{username}}/npi",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "internal",
+            "users",
+            "{{username}}",
+            "npi"
+          ]
+        },
+        "description": "Add NPI for a User"
+      },
+      "response": []
+    }
+  ]
+}

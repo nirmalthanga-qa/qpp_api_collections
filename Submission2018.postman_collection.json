@@ -1,0 +1,220 @@
+{
+  "info": {
+    "_postman_id": "f2b7e92e-96b2-46cf-aaff-5ad3e7e1cadb",
+    "name": "Submission2018",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-f2b7e92e-96b2-46cf-aaff-5ad3e7e1cadb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Imp Env - GET TIN submission",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          },
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000498394",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/submissions?entityType=group",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "submissions"
+          ],
+          "query": [
+            {
+              "key": "entityType",
+              "value": "group"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dev Env - GET TIN Submission 2018",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer {{json_web_token}}"
+          },
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "type": "text",
+            "value": "000644007"
+          },
+          {
+            "key": "qpp-national-provider-identifier",
+            "type": "text",
+            "value": "0998678375"
+          }
+        ],
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/submissions?entityType=individual",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "submissions"
+          ],
+          "query": [
+            {
+              "key": "entityType",
+              "value": "individual"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Imp Env - POST TIN Submission",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\":{\r\n  \"entityType\": \"group\",\r\n  \"taxpayerIdentificationNumber\": \"000498394\",\r\n\r\n\r\n  \"performanceYear\": 2018},\r\n     \r\n      \"category\": \"quality\",\r\n      \"performanceStart\": \"2018-01-01\",\r\n      \"performanceEnd\": \"2018-08-01\",\r\n      \"submissionMethod\": \"registry\",\r\n\r\n      \"measurements\": [\r\n        {\r\n          \r\n      \"measureId\": \"195\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 6000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"332\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 6000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"436\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": true,\r\n       \"performanceMet\": 10000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"141\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 9000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"109\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 3779,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 6221,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"131\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 2613,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 7387,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"138\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 7000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"191\",\r\n      \"value\": {\r\n       \"isEndToEndReported\": false,\r\n       \"performanceMet\": 6000,\r\n       \"eligiblePopulationExclusion\": 0,\r\n       \"performanceNotMet\": 0,\r\n       \"eligiblePopulation\": 10000\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"007\",\r\n      \"value\": {\r\n        \"isEndToEndReported\": false,\r\n        \"strata\": [\r\n          {\r\n            \"performanceMet\": 7702,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 2298,\r\n            \"eligiblePopulation\": 10000,\r\n            \"stratum\": \"LVSD\"\r\n          },\r\n          {\r\n            \"performanceMet\": 8001,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 1999,\r\n            \"eligiblePopulation\": 10000,\r\n            \"stratum\": \"priorMI\"\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"measureId\": \"348\",\r\n      \"value\": {\r\n        \"isEndToEndReported\": true,\r\n        \"strata\": [\r\n          {\r\n            \"performanceMet\": 10000,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 10000,\r\n            \"stratum\": \"30\"\r\n          },\r\n          {\r\n            \"performanceMet\": 10000,\r\n            \"eligiblePopulationExclusion\": 0,\r\n            \"performanceNotMet\": 0,\r\n            \"eligiblePopulation\": 10000,\r\n            \"stratum\": \"90\"\r\n          }\r\n        ]\r\n      }\r\n        \r\n      \r\n    }\r\n      ]}\r\n      \r\n\r\n      \r\n  \r\n"
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dev Env - POST TIN Submission",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"submission\":{\r\n  \"programName\": \"mips\",\r\n  \"entityType\": \"group\",\r\n  \"taxpayerIdentificationNumber\": \"000153214\",\r\n            \r\n\r\n  \"performanceYear\": 2018,\r\n      \"category\": \"ia\",\r\n      \"submissionMethod\": \"electronicHealthRecord\",\r\n      \"performanceStart\": \"2018-01-01\",\r\n      \"performanceEnd\": \"2018-05-01\",\r\n      \"measurements\": [\r\n        {\r\n          \"measureId\": \"IA_PCMH\",\r\n          \"value\": true\r\n        },\r\n        {\r\n          \"measureId\": \"IA_AHE_4\",\r\n          \"value\": true\r\n        }\r\n      ]\r\n    }\r\n      \r\n  \r\n\r\n}"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/submissions/measurement-sets/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "submissions",
+            "measurement-sets",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "info": {
+    "_postman_id": "aea34a0d-4ed8-499b-b998-b1604fa86eb9",
+    "name": "Physician_Compare",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-aea34a0d-4ed8-499b-b998-b1604fa86eb9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST-Boley Clinic",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"taxpayerIdentificationNumber\": \"000101010\",\n    \"performanceYear\": 2017,\n    \"entityType\": \"group\",\n    \"details\": {\n    \"finalScore\": {\n        \"quality\": {\n        \"numerator\": 50,\n        \"denominator\": 85\n        },\n        \"aci\": {\n        \"numerator\": 0,\n        \"denominator\": 0\n        },\n        \"ia\": {\n        \"numerator\": 12,\n        \"denominator\": 15\n        }\n    },\n    \"activities\": [\n        {\n            \"name\": \"Participates in APM program.\",\n            \"description\": \"This is a description about the apm program\",\n            \"externalLink\": \"http://www.apm.com/efg.html\",\n            \"status\": \"Y\"\n        },\n        {\n            \"name\": \"Committed to heart health through the Million Hearts® initiative.\",\n            \"description\": \"This is a description of another apm program.\",\n            \"externalLink\": \"http://www.abcd.com/efg.html\",\n            \"status\": \"Y\"\n        }\n    ],\n    \"measurements\": [\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 4,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": true,\n            \"measureId\": \"CAHPS_8\",\n            \"name\": \"Courteous and helpful office staff.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"A higher score is better because it means that more patients thought the office staff in the group were polite and helpful.\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 2,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": false,\n            \"measureId\": \"CAHPS_9\",\n            \"name\": \"Clinicians working together for your care.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"aci\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease.\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        }\n      ]\n    }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"taxpayerIdentificationNumber\": \"000101010\",\n    \"nationalProviderIdentifier\": \"0111001010\",\n    \"performanceYear\": 2017,\n    \"entityType\": \"individual\",\n    \"details\": {\n    \"finalScore\": {\n        \"quality\": {\n        \"numerator\": 50,\n        \"denominator\": 85\n        },\n        \"aci\": {\n        \"numerator\": 0,\n        \"denominator\": 0\n        },\n        \"ia\": {\n        \"numerator\": 12,\n        \"denominator\": 15\n        }\n    },\n    \"activities\": [\n        {\n            \"name\": \"Participates in APM program.\",\n            \"description\": \"This is a description about the apm program\",\n            \"externalLink\": \"http://www.apm.com/efg.html\",\n            \"status\": \"Y\"\n        },\n        {\n            \"name\": \"Committed to heart health through the Million Hearts® initiative.\",\n            \"description\": \"This is a description of another apm program.\",\n            \"externalLink\": \"http://www.abcd.com/efg.html\",\n            \"status\": \"Y\"\n        }\n    ],\n    \"measurements\": [\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 4,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": true,\n            \"measureId\": \"CAHPS_8\",\n            \"name\": \"Courteous and helpful office staff.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"A higher score is better because it means that more patients thought the office staff in the group were polite and helpful.\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 2,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": false,\n            \"measureId\": \"CAHPS_9\",\n            \"name\": \"Clinicians working together for your care.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"aci\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease.\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        }\n      ]\n    }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST-Boley Clinic NPI 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000101010"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"taxpayerIdentificationNumber\": \"000101010\",\n    \"nationalProviderIdentifier\": \"0111000202\",\n    \"performanceYear\": 2017,\n    \"entityType\": \"individual\",\n    \"details\": {\n    \"finalScore\": {\n        \"quality\": {\n        \"numerator\": 50,\n        \"denominator\": 85\n        },\n        \"aci\": {\n        \"numerator\": 0,\n        \"denominator\": 0\n        },\n        \"ia\": {\n        \"numerator\": 12,\n        \"denominator\": 15\n        }\n    },\n    \"activities\": [\n        {\n            \"name\": \"Participates in APM program.\",\n            \"description\": \"This is a description about the apm program\",\n            \"externalLink\": \"http://www.apm.com/efg.html\",\n            \"status\": \"Y\"\n        },\n        {\n            \"name\": \"Committed to heart health through the Million Hearts® initiative.\",\n            \"description\": \"This is a description of another apm program.\",\n            \"externalLink\": \"http://www.abcd.com/efg.html\",\n            \"status\": \"Y\"\n        }\n    ],\n    \"measurements\": [\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 4,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": true,\n            \"measureId\": \"CAHPS_8\",\n            \"name\": \"Courteous and helpful office staff.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"A higher score is better because it means that more patients thought the office staff in the group were polite and helpful.\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 2,\n            \"scoreType\": \"PERCENTAGE\",\n            \"suppressed\": false,\n            \"measureId\": \"CAHPS_9\",\n            \"name\": \"Clinicians working together for your care.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"quality\",\n            \"performanceCategory\": {\n                \"name\": \"Patient survey scores\",\n                \"description\": \"These performance scores are based on information patients reported to Medicare about their experiences....\",\n                \"categoryType\": \"Survey\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretry low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        },\n        {\n            \"score\": 3,\n            \"scoreType\": \"STAR\",\n            \"suppressed\": false,\n            \"measureId\": \"318\",\n            \"name\": \"Screening older patients risk of falling.\",\n            \"description\": \"This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.  This is some description.\",\n            \"additionalDescription\": \"Some additional description\",\n            \"category\": \"aci\",\n            \"performanceCategory\": {\n                \"name\": \"Preventive care: Cancer screening\",\n                \"description\": \"This is some description of a disease.\",\n                \"categoryType\": \"Performance\"\n            },\n            \"benchmarks\": {\n                \"1\": \"Pretty low threshold\",\n                \"2\": \"Some other stuff\"\n            }\n        }\n      ]\n    }\n}"
+        },
+        "url": {
+          "raw": "http://local.semanticbits.com:8081/api/clinician-insights/physician-compare",
+          "protocol": "http",
+          "host": [
+            "local",
+            "semanticbits",
+            "com"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PhysicianCompare_Dev",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000198267"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"taxpayerIdentificationNumber\":\"999509070\",\"performanceYear\":2017,\"entityType\":\"group\",\"displayName\":\"John Doe\",\"details\":{\"quality\":{\"activities\":[{\"activityId\":\"MIPS_GRP_Attest5\",\"status\":\"Y\",\"name\":\"Title for MIPS Attestation 5\",\"description\":\"Measure Description for MIPS Attestation Five: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\"}],\"performanceCategories\":[],\"downloadable\":{\"rows\":[{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"},{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"}],\"columns\":[{\"varname\":\"npi\",\"label\":\"NPI\",\"description\":\"\",\"suppressed\":false},{\"varname\":\"ind_pac_ind\",\"label\":\"PAC ID\",\"description\":\"Unique individual clinician ID assigned by PECOS\",\"suppressed\":true},{\"varname\":\"lst_nm\",\"label\":\"Last Name\",\"description\":\"Individual clinician last name\",\"suppressed\":false},{\"varname\":\"frst_nm\",\"label\":\"First Name\",\"description\":\"Individual clinician first name\",\"suppressed\":false}]}},\"aci\":{\"activities\":[{\"activityId\":\"ACI_GRP_attest2\",\"status\":\"N\",\"name\":\"Attestation title for attest2 (ACI)\",\"description\":\"Measure Description for ACI Attestation Two: <ul><li>Bullet point One.</li><li>Bullet point Two.</li><li><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</a></li></ul>\"}],\"performanceCategories\":[],\"downloadable\":{\"rows\":[{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"},{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"}],\"columns\":[{\"varname\":\"npi\",\"label\":\"NPI\",\"description\":\"\",\"suppressed\":false},{\"varname\":\"ind_pac_ind\",\"label\":\"PAC ID\",\"description\":\"Unique individual clinician ID assigned by PECOS\",\"suppressed\":true},{\"varname\":\"lst_nm\",\"label\":\"Last Name\",\"description\":\"Individual clinician last name\",\"suppressed\":false},{\"varname\":\"frst_nm\",\"label\":\"First Name\",\"description\":\"Individual clinician first name\",\"suppressed\":false}]}},\"ia\":{\"activities\":[{\"activityId\":\"IA_GRP_attest2\",\"status\":\"N\",\"name\":\"Attestation title for attest2\",\"description\":\"Measure Description for IA Attestation Two: <p>Paragraph One</p><p>Paragraph Two</p><p><a href=\\\"https://www.medicare.gov/physiciancompare\\\">Please see the Physician Compare website.</p>\",\"externalLink\":\"http://data.medicare.gov\"}],\"performanceCategories\":[],\"downloadable\":{\"rows\":[{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"},{\"frst_nm\":\"Bridget\",\"lst_nm\":\"Wenlock\",\"ind_pac_ind\":\"0012345678\",\"npi\":\"1234567890\"}],\"columns\":[{\"varname\":\"npi\",\"label\":\"NPI\",\"description\":\"\",\"suppressed\":false},{\"varname\":\"ind_pac_ind\",\"label\":\"PAC ID\",\"description\":\"Unique individual clinician ID assigned by PECOS\",\"suppressed\":true},{\"varname\":\"lst_nm\",\"label\":\"Last Name\",\"description\":\"Individual clinician last name\",\"suppressed\":false},{\"varname\":\"frst_nm\",\"label\":\"First Name\",\"description\":\"Individual clinician first name\",\"suppressed\":false}]}},\"finalScore\":{\"downloadable\":{\"rows\":[{\"quality_score_denominator\":\"60\",\"quality_score_numerator\":\"60\"}],\"columns\":[{\"varname\":\"quality_score_denominator\",\"label\":\"Quality Score Denominator\",\"description\":\"Individual clinician quality final score\",\"suppressed\":false},{\"varname\":\"quality_score_numerator\",\"label\":\"Quality Score Numerator\",\"description\":\"Individual clinician quality final score\",\"suppressed\":false}]}}}}\r\n"
+        },
+        "url": {
+          "raw": "http://dev.qpp.cms.gov/api/clinician-insights/physician-compare/",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "qpp",
+            "cms",
+            "gov"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PhysicianCompare_Imp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "qpp-taxpayer-identification-number",
+            "value": "000153214",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/clinician-insights/physician-compare/",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "clinician-insights",
+            "physician-compare",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

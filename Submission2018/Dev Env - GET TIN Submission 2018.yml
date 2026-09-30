@@ -1,0 +1,30 @@
+info:
+  name: Dev Env - GET TIN Submission 2018
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://dev.qpp.cms.gov/api/submissions/submissions?entityType=individual
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{json_web_token}}
+    - name: qpp-taxpayer-identification-number
+      value: "000644007"
+    - name: qpp-national-provider-identifier
+      value: "0998678375"
+  params:
+    - name: entityType
+      value: individual
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,89 @@
+{
+  "info": {
+    "_postman_id": "84ac05f3-2ffc-40f6-8729-0c0d01d1e029",
+    "name": "EIDM_TIN_Creation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2873628",
+    "_collection_link": "https://go.postman.co/collection/2873628-84ac05f3-2ffc-40f6-8729-0c0d01d1e029?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "DEV_EIDM",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.qpp.cms.gov.v1+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://internal-qpp-kong-dev-internal-1054363189.us-east-1.elb.amazonaws.com/api/auth/internal/users/test.nirmal1",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-dev-internal-1054363189",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "internal",
+            "users",
+            "test.nirmal1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "IMPL_EIDM",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/vnd.qpp.cms.gov.v1+json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://internal-qpp-kong-imp-internal-160314438.us-east-1.elb.amazonaws.com/api/auth/internal/users/Demo.User",
+          "protocol": "http",
+          "host": [
+            "internal-qpp-kong-imp-internal-160314438",
+            "us-east-1",
+            "elb",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "internal",
+            "users",
+            "Demo.User"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
